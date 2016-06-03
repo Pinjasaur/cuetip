@@ -1,0 +1,47 @@
+[data-tooltip] {
+  position: relative;
+  text-decoration: none;
+  border-bottom: .1em dashed currentColor;
+  
+  // tooltip triangle
+  &:before {
+    content: "";
+    display: none;
+    position: absolute;
+    // offset the triangle from the element
+    bottom: calc(100% - .5em);
+    left: 50%;
+    //transform: translateX(-50%);
+    border-width: .5em;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+  }
+  
+  // tooltip contents
+  &:after {
+    content: attr(data-tooltip);
+    display: none;
+    position: absolute;
+    white-space: nowrap;
+    background: #333;
+    color: #fff;
+    padding: .25em;
+    border-radius: 2px;
+    // offset the tooltip content from the triangle
+    bottom: calc(100% + .5em);
+    left: 50%;
+    //transform: translateX(-50%);
+  }
+  
+  &:before, &:after {
+    transform: translateX(-50%);
+  }
+  
+  &:hover {
+    cursor: help;
+  }
+  
+  &:hover:after, &:hover:before {
+    display: inline-block;
+  }
+}
