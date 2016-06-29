@@ -11,7 +11,6 @@
     // offset the triangle from the element
     bottom: calc(100% - .5em);
     left: 50%;
-    //transform: translateX(-50%);
     border-width: .5em;
     border-style: solid;
     border-color: #333 transparent transparent transparent;
@@ -30,7 +29,6 @@
     // offset the tooltip content from the triangle
     bottom: calc(100% + .5em);
     left: 50%;
-    //transform: translateX(-50%);
   }
   
   &:before, &:after {

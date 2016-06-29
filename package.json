@@ -1,0 +1,28 @@
+{
+  "name": "tooltip.css",
+  "version": "1.0.0",
+  "description": "Simple CSS tooltips.",
+  "main": "dist/tooltip.css",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pinjasaur/tooltip.css.git"
+  },
+  "author": "Paul Esch-Laurent",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Pinjasaur/tooltip.css/issues"
+  },
+  "homepage": "https://github.com/Pinjasaur/tooltip.css#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-header": "^1.8.7",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2"
+  }
+}
