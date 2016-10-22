@@ -1,27 +1,28 @@
 {
-  "name": "tooltip.css",
+  "name": "cuetip",
   "version": "1.0.0",
   "description": "Simple CSS tooltips.",
-  "main": "dist/tooltip.css",
+  "main": "dist/cuetip.min.css",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Pinjasaur/tooltip.css.git"
+    "url": "git+https://github.com/Pinjasaur/cuetip.git"
   },
   "author": "Paul Esch-Laurent",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Pinjasaur/tooltip.css/issues"
+    "url": "https://github.com/Pinjasaur/cuetip/issues"
   },
-  "homepage": "https://pinjasaur.github.io/tooltip.css/",
+  "homepage": "https://pinjasaur.github.io/cuetip/",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-clean": "^0.3.2",
     "gulp-cssnano": "^2.1.2",
     "gulp-header": "^1.8.7",
+    "gulp-load-plugins": "^1.3.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2"
   }

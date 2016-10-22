@@ -1,50 +1,52 @@
-var gulp = require("gulp"),
-    sass = require("gulp-sass"),
-    autoprefixer = require("gulp-autoprefixer"),
-    cssnano = require("gulp-cssnano"),
-    rename = require("gulp-rename"),
-    clean  = require("gulp-clean"),
-    header = require("gulp-header"),
-    pkg    = require("./package.json"),
-    banner = ["/*!",
-              " * <%= pkg.name %> v<%= pkg.version %> | <%= pkg.homepage %>",
-              " * @author <%= pkg.author %> | @license <%= pkg.license %>",
-              " */",
-              ""].join("\n");
+var gulp    = require("gulp"),
+    plugins = require("gulp-load-plugins")(),
+    pkg     = require("./package.json"),
+    config = {
+      banners: {
+        full: [
+          "/*!",
+          " * <%= pkg.name %> v<%= pkg.version %> - <%= pkg.description %>",
+          " * On the web at <%= pkg.homepage %>",
+          " * Written by <%= pkg.author %>",
+          " * Licensed under <%= pkg.license %>",
+          " */",
+          ""
+        ].join("\n"),
+        min: [
+          "/*! <%= pkg.name %> v<%= pkg.version %> | <%= pkg.license %> License | <%= pkg.homepage %> */",
+          ""
+        ].join("\n")
+      },
+      autoprefixer: {
+        browsers: ["last 2 versions", "> 5%"]
+      },
+      cssnano: {
+        discardComments: {
+          removeAll: true
+        }
+      }
+    };
 
 // SCSS, autoprefix, and minify src/
-gulp.task("build", function() {
-  return gulp.src("src/*")
-    .pipe(sass())
-    .pipe(autoprefixer({
-      browsers: ["last 2 versions"]
-    }))
-    .pipe(header(banner, { pkg: pkg }))
+gulp.task("build", ["clean"], function() {
+  return gulp.src("src/*.scss")
+    .pipe(plugins.sass())
+    .pipe(plugins.autoprefixer(config.autoprefixer))
+    .pipe(plugins.header(config.banners.full, { pkg: pkg }))
     .pipe(gulp.dest("dist/"))
-    .pipe(cssnano({
-       discardComments: {
-        removeAll: true
-      }
-    }))
-    .pipe(rename({
-      suffix: ".min"
-    }))
-    .pipe(header(banner, { pkg: pkg }))
+    .pipe(plugins.cssnano(config.cssnano))
+    .pipe(plugins.rename({ suffix: ".min" }))
+    .pipe(plugins.header(config.banners.min, { pkg: pkg }))
     .pipe(gulp.dest("dist/"));
 });
 
 // watch for changes and rebuild CSS
 gulp.task("watch", function() {
-  gulp.watch("src/*", ["clean", "build"]);
+  gulp.watch("src/*", ["build"]);
 });
 
 // clean dist/
 gulp.task("clean", function() {
-  return gulp.src("dist/*", { read: false })
-    .pipe(clean());
-});
-
-// default task is clean then build
-gulp.task("default", ["clean"], function() {
-  gulp.start("build");
+  return gulp.src("dist", { read: false })
+    .pipe(plugins.clean());
 });

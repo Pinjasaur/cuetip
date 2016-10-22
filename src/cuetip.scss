@@ -1,8 +1,10 @@
-[data-tooltip] {
+$cuetip-namespace: "cuetip";
+
+[data-#{$cuetip-namespace}] {
   position: relative;
   text-decoration: none;
   border-bottom: .1em dashed currentColor;
-  
+
   // tooltip triangle
   &:before {
     content: "";
@@ -15,7 +17,7 @@
     border-style: solid;
     border-color: #333 transparent transparent transparent;
   }
-  
+
   // tooltip contents
   &:after {
     content: attr(data-tooltip);
@@ -30,15 +32,15 @@
     bottom: calc(100% + .5em);
     left: 50%;
   }
-  
+
   &:before, &:after {
     transform: translateX(-50%);
   }
-  
+
   &:hover {
     cursor: help;
   }
-  
+
   &:hover:after, &:hover:before {
     display: inline-block;
   }

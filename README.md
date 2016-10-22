@@ -1,4 +1,4 @@
-# tooltip.css
+# cuetip
 Simple CSS Tooltips
 
 ## TODO

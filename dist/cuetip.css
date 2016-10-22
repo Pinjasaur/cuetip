@@ -1,12 +1,14 @@
 /*!
- * tooltip.css v1.0.0 | https://github.com/Pinjasaur/tooltip.css#readme
- * @author Paul Esch-Laurent | @license MIT
+ * cuetip v1.0.0 - Simple CSS tooltips.
+ * On the web at https://pinjasaur.github.io/cuetip/
+ * Written by Paul Esch-Laurent
+ * Licensed under MIT
  */
-[data-tooltip] {
+[data-cuetip] {
   position: relative;
   text-decoration: none;
   border-bottom: .1em dashed currentColor; }
-  [data-tooltip]:before {
+  [data-cuetip]:before {
     content: "";
     display: none;
     position: absolute;
@@ -15,7 +17,7 @@
     border-width: .5em;
     border-style: solid;
     border-color: #333 transparent transparent transparent; }
-  [data-tooltip]:after {
+  [data-cuetip]:after {
     content: attr(data-tooltip);
     display: none;
     position: absolute;
@@ -26,9 +28,10 @@
     border-radius: 2px;
     bottom: calc(100% + .5em);
     left: 50%; }
-  [data-tooltip]:before, [data-tooltip]:after {
-    transform: translateX(-50%); }
-  [data-tooltip]:hover {
+  [data-cuetip]:before, [data-cuetip]:after {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
+  [data-cuetip]:hover {
     cursor: help; }
-  [data-tooltip]:hover:after, [data-tooltip]:hover:before {
+  [data-cuetip]:hover:after, [data-cuetip]:hover:before {
     display: inline-block; }
