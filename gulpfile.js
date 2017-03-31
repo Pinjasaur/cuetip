@@ -30,7 +30,8 @@ var gulp    = require("gulp"),
 // SCSS, autoprefix, and minify src/
 gulp.task("build", ["clean"], function() {
   return gulp.src("src/*.scss")
-    .pipe(plugins.sass())
+    .pipe(plugins.plumber())
+    .pipe(plugins.sass.sync())
     .pipe(plugins.autoprefixer(config.autoprefixer))
     .pipe(plugins.header(config.banners.full, { pkg: pkg }))
     .pipe(gulp.dest("dist/"))
@@ -42,7 +43,7 @@ gulp.task("build", ["clean"], function() {
 
 // watch for changes and rebuild CSS
 gulp.task("watch", function() {
-  gulp.watch("src/*", ["build"]);
+  gulp.watch("src/*.scss", ["build"]);
 });
 
 // clean dist/
@@ -50,3 +51,6 @@ gulp.task("clean", function() {
   return gulp.src("dist", { read: false })
     .pipe(plugins.clean());
 });
+
+// Set default task
+gulp.task("default", ["watch"]);
