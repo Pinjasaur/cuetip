@@ -4,29 +4,29 @@
  * Written by Paul Esch-Laurent
  * Licensed under MIT
  */
-[data-cuetip] {
+[data-tooltip] {
   position: relative; }
-  [data-cuetip]:before {
+  [data-tooltip]:before {
     content: "";
     bottom: calc(100% - .5em);
     border-width: .5em;
     border-style: solid;
     border-color: #333 transparent transparent transparent; }
-  [data-cuetip]:after {
-    content: attr(data-cuetip);
+  [data-tooltip]:after {
+    content: attr(data-tooltip);
     white-space: nowrap;
     background: #333;
     color: #fff;
     padding: .25em;
     border-radius: 2px;
     bottom: calc(100% + .5em); }
-  [data-cuetip]:before, [data-cuetip]:after {
+  [data-tooltip]:before, [data-tooltip]:after {
     display: none;
     position: absolute;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
     left: 50%; }
-  [data-cuetip]:hover {
+  [data-tooltip]:hover {
     cursor: help; }
-  [data-cuetip]:hover:after, [data-cuetip]:hover:before {
+  [data-tooltip]:hover:after, [data-tooltip]:hover:before {
     display: inline-block; }
