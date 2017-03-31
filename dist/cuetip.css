@@ -15,7 +15,7 @@
     border-style: solid;
     border-color: #333 transparent transparent transparent; }
   [data-cuetip]:after {
-    content: attr(data-tooltip);
+    content: attr(data-cuetip);
     white-space: nowrap;
     background: #333;
     color: #fff;

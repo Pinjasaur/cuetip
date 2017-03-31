@@ -17,7 +17,7 @@ $cuetip-namespace: "cuetip";
 
   // tooltip contents
   &:after {
-    content: attr(data-tooltip);
+    content: attr(data-#{$cuetip-namespace});
     white-space: nowrap;
     background: #333;
     color: #fff;
