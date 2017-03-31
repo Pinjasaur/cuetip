@@ -5,9 +5,7 @@
  * Licensed under MIT
  */
 [data-cuetip] {
-  position: relative;
-  text-decoration: none;
-  border-bottom: .1em dashed currentColor; }
+  position: relative; }
   [data-cuetip]:before {
     content: "";
     bottom: calc(100% - .5em);

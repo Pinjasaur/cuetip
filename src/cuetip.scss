@@ -1,9 +1,13 @@
-$cuetip-namespace: "cuetip";
+$cuetip-namespace: "cuetip" !default;
+$cuetip-dashed-underline: false !default;
 
 [data-#{$cuetip-namespace}] {
   position: relative;
-  text-decoration: none;
-  border-bottom: .1em dashed currentColor;
+
+  @if ($cuetip-dashed-underline) {
+    text-decoration: none;
+    border-bottom: .1em dashed currentColor;
+  }
 
   // tooltip triangle
   &:before {
