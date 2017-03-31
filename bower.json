@@ -1,0 +1,22 @@
+{
+  "name": "cuetip",
+  "version": "0.1.0",
+  "description": "Simple CSS tooltips.",
+  "main": "dist/cuetip.css",
+  "authors": [
+    "Paul Esch-Laurent"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "tooltips"
+  ],
+  "homepage": "https://github.com/Pinjasaur/cuetip",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
