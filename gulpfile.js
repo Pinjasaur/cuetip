@@ -18,7 +18,7 @@ var gulp    = require("gulp"),
         ].join("\n")
       },
       autoprefixer: {
-        browsers: ["last 2 versions", "> 5%"]
+        browsers: ["last 2 versions", "> 1%"]
       },
       cssnano: {
         discardComments: {
