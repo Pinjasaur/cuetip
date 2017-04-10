@@ -1,5 +1,7 @@
 $cuetip-namespace: "tooltip" !default;
 $cuetip-dashed-underline: false !default;
+$cuetip-color-foreground: #fff !default;
+$cuetip-color-background: #333 !default;
 
 [data-#{$cuetip-namespace}] {
   position: relative;
@@ -16,15 +18,15 @@ $cuetip-dashed-underline: false !default;
     bottom: calc(100% - .5em);
     border-width: .5em;
     border-style: solid;
-    border-color: #333 transparent transparent transparent;
+    border-color: $cuetip-color-background transparent transparent transparent;
   }
 
   // tooltip contents
   &:after {
     content: attr(data-#{$cuetip-namespace});
     white-space: nowrap;
-    background: #333;
-    color: #fff;
+    background: $cuetip-color-background;
+    color: $cuetip-color-foreground;
     padding: .25em;
     border-radius: 2px;
     // offset the tooltip content from the triangle
