@@ -9,8 +9,8 @@
   cursor: help; }
   [data-tooltip]:before {
     content: "";
-    bottom: calc(100% - 0.5em);
-    border-width: 0.5em;
+    bottom: calc(100% - 0.25em + 0.2em);
+    border-width: 0.25em;
     border-style: solid;
     border-color: #333 transparent transparent transparent; }
   [data-tooltip]:after {
@@ -20,7 +20,7 @@
     color: #fff;
     padding: .25em;
     border-radius: 2px;
-    bottom: calc(100% + 0.5em); }
+    bottom: calc(100% + 0.25em + 0.2em); }
   [data-tooltip]:before, [data-tooltip]:after {
     display: none;
     position: absolute;

@@ -3,7 +3,8 @@ $cuetip-config: (
   dashed-underline: false,
   color-foreground: #fff,
   color-background: #333,
-  tail-size: .5em
+  tail-size: .25em,
+  offset: .2em
 );
 
 @function config($key) {
@@ -23,7 +24,7 @@ $cuetip-config: (
   &:before {
     content: "";
     // Offset the tail from the element
-    bottom: calc(100% - #{config("tail-size")});
+    bottom: calc(100% - #{config("tail-size")} + #{config("offset")});
     border-width: config("tail-size");
     border-style: solid;
     border-color: config("color-background") transparent transparent transparent;
@@ -38,7 +39,7 @@ $cuetip-config: (
     padding: .25em;
     border-radius: 2px;
     // Offset the head from the tail
-    bottom: calc(100% + #{config("tail-size")});
+    bottom: calc(100% + #{config("tail-size")} + #{config("offset")});
   }
 
   &:before,
