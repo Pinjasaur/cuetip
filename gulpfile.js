@@ -20,10 +20,8 @@ var gulp    = require("gulp"),
       autoprefixer: {
         browsers: ["last 2 versions", "> 1%"]
       },
-      cssnano: {
-        discardComments: {
-          removeAll: true
-        }
+      csso: {
+        comments: false
       }
     };
 
@@ -35,7 +33,7 @@ gulp.task("build", ["clean"], function() {
     .pipe(plugins.autoprefixer(config.autoprefixer))
     .pipe(plugins.header(config.banners.full, { pkg: pkg }))
     .pipe(gulp.dest("dist/"))
-    .pipe(plugins.cssnano(config.cssnano))
+    .pipe(plugins.csso(config.csso))
     .pipe(plugins.rename({ suffix: ".min" }))
     .pipe(plugins.header(config.banners.min, { pkg: pkg }))
     .pipe(gulp.dest("dist/"));
