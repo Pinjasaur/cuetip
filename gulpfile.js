@@ -22,6 +22,9 @@ var gulp    = require("gulp"),
       },
       csso: {
         comments: false
+      },
+      sass: {
+        outputStyle: "expanded"
       }
     };
 
@@ -29,7 +32,7 @@ var gulp    = require("gulp"),
 gulp.task("build", ["clean"], function() {
   return gulp.src("src/*.scss")
     .pipe(plugins.plumber())
-    .pipe(plugins.sass.sync())
+    .pipe(plugins.sass.sync(config.sass))
     .pipe(plugins.autoprefixer(config.autoprefixer))
     .pipe(plugins.header(config.banners.full, { pkg: pkg }))
     .pipe(gulp.dest("dist/"))
