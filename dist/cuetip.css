@@ -27,7 +27,7 @@
   bottom: calc(100% + 0.25em + 0.2em);
 }
 
-[data-tooltip]:before, [data-tooltip]:after {
+[data-tooltip]:before {
   display: none;
   position: absolute;
   -webkit-transform: translateX(-50%);
@@ -35,6 +35,18 @@
   left: 50%;
 }
 
-[data-tooltip]:hover:after, [data-tooltip]:hover:before {
+[data-tooltip]:after {
+  display: none;
+  position: absolute;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  left: 50%;
+}
+
+[data-tooltip]:hover:before {
+  display: inline-block;
+}
+
+[data-tooltip]:hover:after {
   display: inline-block;
 }
