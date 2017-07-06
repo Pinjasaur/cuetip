@@ -1,45 +1,39 @@
-$cuetip-config: (
-  namespace: "tooltip",
-  dashed-underline: false,
-  color-foreground: #fff,
-  color-background: #333,
-  tail-size: .25em,
-  offset: .2em
-);
+$cuetip-namespace: "tooltip" !default;
+$cuetip-dashed-underline: false !default;
+$cuetip-color-foreground: #fff !default;
+$cuetip-color-background: #333 !default;
+$cuetip-tail-size: .25em !default;
+$cuetip-offset: .2em !default;
 
-@function config($key) {
-  @return map-get($cuetip-config, $key);
-}
-
-[data-#{config("namespace")}] {
+[data-#{$cuetip-namespace}] {
   position: relative;
   cursor: help;
 
-  @if (config("dashed-underline")) {
+  @if ($cuetip-dashed-underline) {
     text-decoration: none;
-    border-bottom: .1em dashed config("color-background");
+    border-bottom: .1em dashed $cuetip-color-background;
   }
 
   // Tooltip tail
   &:before {
     content: "";
     // Offset the tail from the element
-    bottom: calc(100% - #{config("tail-size")} + #{config("offset")});
-    border-width: config("tail-size");
+    bottom: calc(100% - #{$cuetip-tail-size} + #{$cuetip-offset});
+    border-width: $cuetip-tail-size;
     border-style: solid;
-    border-color: config("color-background") transparent transparent transparent;
+    border-color: $cuetip-color-background transparent transparent transparent;
   }
 
-  // Tooltip head
+  // Tooltip body
   &:after {
-    content: attr(data-#{config("namespace")});
+    content: attr(data-#{$cuetip-namespace});
     white-space: nowrap;
-    background: config("color-background");
-    color: config("color-foreground");
+    background: $cuetip-color-background;
+    color: $cuetip-color-foreground;
     padding: .25em;
     border-radius: 2px;
-    // Offset the head from the tail
-    bottom: calc(100% + #{config("tail-size")} + #{config("offset")});
+    // Offset the body from the tail
+    bottom: calc(100% + #{$cuetip-tail-size} + #{$cuetip-offset});
   }
 
   &:before,
