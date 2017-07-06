@@ -26,7 +26,7 @@ $cuetip-offset: .2em !default;
 
   @if ($cuetip-has-tail) {
     // Tooltip tail
-    &:before {
+    &::before {
       content: "";
       // Offset the tail from the element
       bottom: calc(100% - #{$cuetip-tail-size} + #{$cuetip-offset});
@@ -37,7 +37,7 @@ $cuetip-offset: .2em !default;
   }
 
   // Tooltip body
-  &:after {
+  &::after {
     content: attr(data-#{$cuetip-namespace});
     white-space: nowrap;
     background: $cuetip-color-background;
@@ -49,22 +49,22 @@ $cuetip-offset: .2em !default;
   }
 
   @if ($cuetip-has-tail) {
-    &:before {
+    &::before {
       @include __cuetip-common__;
     }
   }
 
-  &:after {
+  &::after {
     @include __cuetip-common__;
   }
 
   @if ($cuetip-has-tail) {
-    &:hover:before {
+    &:hover::before {
       @include __cuetip-common-hover__;
     }
   }
 
-  &:hover:after {
+  &:hover::after {
     @include __cuetip-common-hover__;
   }
 }
