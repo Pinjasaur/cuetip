@@ -22,7 +22,7 @@
   white-space: nowrap;
   background: #333;
   color: #fff;
-  padding: .25em;
+  padding: 0.25em;
   border-radius: 2px;
   bottom: calc(100% + 0.25em + 0.2em);
 }

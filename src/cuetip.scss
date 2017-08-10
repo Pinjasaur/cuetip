@@ -1,14 +1,17 @@
+// Configuration variables
 $cuetip-namespace: "tooltip" !default;
 
 $cuetip-has-tail: true !default;
 
 $cuetip-color-foreground: #fff !default;
 $cuetip-color-background: #333 !default;
+$cuetip-padding: .25em !default;
+$cuetip-border-radius: 2px !default;
 
 $cuetip-tail-size: .25em !default;
 $cuetip-offset: .2em !default;
 
-
+// Internal usage
 @mixin __cuetip-common__ {
   display: none;
   position: absolute;
@@ -42,8 +45,8 @@ $cuetip-offset: .2em !default;
     white-space: nowrap;
     background: $cuetip-color-background;
     color: $cuetip-color-foreground;
-    padding: .25em;
-    border-radius: 2px;
+    padding: $cuetip-padding;
+    border-radius: $cuetip-border-radius;
     // Offset the body from the tail
     bottom: calc(100% + #{$cuetip-tail-size} + #{$cuetip-offset});
   }
