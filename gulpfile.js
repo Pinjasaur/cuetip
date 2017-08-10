@@ -31,8 +31,9 @@ var gulp    = require("gulp"),
 // SCSS, autoprefix, and minify src/
 gulp.task("build", ["clean"], function() {
   return gulp.src("src/*.scss")
-    .pipe(plugins.plumber())
-    .pipe(plugins.sass.sync(config.sass))
+    .pipe(plugins.sass(config.sass)
+      .on("error", plugins.sass.logError)
+    )
     .pipe(plugins.autoprefixer(config.autoprefixer))
     .pipe(plugins.header(config.banners.full, { pkg: pkg }))
     .pipe(gulp.dest("dist/"))
