@@ -21,7 +21,8 @@ var gulp    = require("gulp"),
         browsers: ["last 2 versions", "> 1%"]
       },
       csso: {
-        comments: false
+        comments: false,
+        restructure: false
       },
       sass: {
         outputStyle: "expanded"
