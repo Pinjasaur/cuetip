@@ -30,10 +30,10 @@ var gulp    = require("gulp"),
 
 // SCSS, autoprefix, and minify src/
 gulp.task("build", ["clean"], function() {
-  return gulp.src("src/*.scss")
-    .pipe(plugins.sass(config.sass)
-      .on("error", plugins.sass.logError)
-    )
+  return gulp
+    .src("src/*.scss")
+    .pipe(plugins.plumber())
+    .pipe(plugins.sass(config.sass))
     .pipe(plugins.autoprefixer(config.autoprefixer))
     .pipe(plugins.header(config.banners.full, { pkg: pkg }))
     .pipe(gulp.dest("dist/"))
@@ -50,7 +50,8 @@ gulp.task("watch", function() {
 
 // clean dist/
 gulp.task("clean", function() {
-  return gulp.src("dist", { read: false })
+  return gulp
+    .src("dist", { read: false })
     .pipe(plugins.clean());
 });
 
