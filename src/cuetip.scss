@@ -23,9 +23,8 @@ $cuetip-offset: .2em !default;
   display: none;
   pointer-events: none;
   position: absolute;
-  transform: translateX(-50%);
-  left: 50%;
-  z-index: $cuetip-z-index;
+  transform: translate#{__cuetip-position__($cuetip-default-position, 3)}(unquote('(-50%)'));
+  #{__cuetip-position__($cuetip-default-position, 2)}: 50%;
 }
 
 @mixin __cuetip-common-hover__ {
@@ -77,8 +76,8 @@ $__cuetip-map__: (
         @include __cuetip-reset__;
         #{__cuetip-position__($position, 1)}: calc(100% - #{$cuetip-tail-size} + #{$cuetip-offset});
         border-color: #{__cuetip-position__($position, 4)};
-        #{__cuetip-position__($position, 2)}: 50%;
         transform: translate#{__cuetip-position__($position, 3)}(unquote('(-50%)'));
+        #{__cuetip-position__($position, 2)}: 50%;
       }
     }
   }
@@ -101,8 +100,8 @@ $__cuetip-map__: (
     &.#{$cuetip-class-prefix}#{$position}::after {
       @include __cuetip-reset__;
       #{__cuetip-position__($position, 1)}: calc(100% + #{$cuetip-tail-size} + #{$cuetip-offset});
-      #{__cuetip-position__($position, 2)}: 50%;
       transform: translate#{__cuetip-position__($position, 3)}(unquote('(-50%)'));
+      #{__cuetip-position__($position, 2)}: 50%;
     }
   }
 

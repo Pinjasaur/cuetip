@@ -16,7 +16,6 @@
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   left: 50%;
-  z-index: 9999;
   content: "";
   bottom: calc(100% - 0.25em + 0.2em);
   border-width: 0.25em;
@@ -31,9 +30,9 @@
   left: auto;
   bottom: calc(100% - 0.25em + 0.2em);
   border-color: #333 transparent transparent transparent;
-  left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  left: 50%;
 }
 
 [data-tooltip].tooltip--right::before {
@@ -43,9 +42,9 @@
   left: auto;
   left: calc(100% - 0.25em + 0.2em);
   border-color: transparent #333 transparent transparent;
-  top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  top: 50%;
 }
 
 [data-tooltip].tooltip--bottom::before {
@@ -55,9 +54,9 @@
   left: auto;
   top: calc(100% - 0.25em + 0.2em);
   border-color: transparent transparent #333 transparent;
-  left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  left: 50%;
 }
 
 [data-tooltip].tooltip--left::before {
@@ -67,9 +66,9 @@
   left: auto;
   right: calc(100% - 0.25em + 0.2em);
   border-color: transparent transparent transparent #333;
-  top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  top: 50%;
 }
 
 [data-tooltip]::after {
@@ -79,7 +78,6 @@
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   left: 50%;
-  z-index: 9999;
   content: attr(data-tooltip);
   white-space: nowrap;
   background: #333;
@@ -95,9 +93,9 @@
   bottom: auto;
   left: auto;
   bottom: calc(100% + 0.25em + 0.2em);
-  left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  left: 50%;
 }
 
 [data-tooltip].tooltip--right::after {
@@ -106,9 +104,9 @@
   bottom: auto;
   left: auto;
   left: calc(100% + 0.25em + 0.2em);
-  top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  top: 50%;
 }
 
 [data-tooltip].tooltip--bottom::after {
@@ -117,9 +115,9 @@
   bottom: auto;
   left: auto;
   top: calc(100% + 0.25em + 0.2em);
-  left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  left: 50%;
 }
 
 [data-tooltip].tooltip--left::after {
@@ -128,9 +126,9 @@
   bottom: auto;
   left: auto;
   right: calc(100% + 0.25em + 0.2em);
-  top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  top: 50%;
 }
 
 [data-tooltip]:hover::before {
