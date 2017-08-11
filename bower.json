@@ -1,6 +1,5 @@
 {
   "name": "cuetip",
-  "version": "0.1.0",
   "description": "Simple CSS tooltips.",
   "main": "dist/cuetip.css",
   "authors": [
@@ -9,6 +8,9 @@
   "license": "MIT",
   "keywords": [
     "css",
+    "sass",
+    "scss",
+    "tooltip",
     "tooltips"
   ],
   "homepage": "https://github.com/Pinjasaur/cuetip",

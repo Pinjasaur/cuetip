@@ -16,6 +16,13 @@
     "url": "https://github.com/Pinjasaur/cuetip/issues"
   },
   "homepage": "https://pinjasaur.github.io/cuetip/",
+  "keywords": [
+    "css",
+    "sass",
+    "scss",
+    "tooltip",
+    "tooltips"
+  ],
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
