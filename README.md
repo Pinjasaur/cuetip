@@ -28,9 +28,10 @@ or as an `@import` in your Sass.
 
 ### Configuration
 
-Tons of Sass variables to configure cuetip for your project.
-
-For brevity, the following documentation implicity prefixes all variables with `$cuetip-`. You can always view the Sass variables directly in the [source][source].
+#### Variables
+For brevity, the following documentation implicity prefixes all variables with
+`$cuetip-`. You can always view the Sass variables directly in the
+[source][source].
 
 - `namespace`
     - **Default**: `cuetip`
@@ -40,7 +41,8 @@ For brevity, the following documentation implicity prefixes all variables with `
     - **Description**: Sets the `class` prefix.
 - `default-position`
     - **Default**: `top`
-    - **Description**: Sets the default tooltip position (top, right, bottom, or left).
+    - **Description**: Sets the default tooltip position (top, right, bottom,
+    or left).
 - `has-tail`
     - **Default**: `true`
     - **Description**: Sets whether the tooltip has a tail (e.g. small triangle).
@@ -64,10 +66,20 @@ For brevity, the following documentation implicity prefixes all variables with `
     - **Description**: Sets the `border-radius`.
 - `tail-size`
     - **Default**: `.25em`
-    - **Description**: Sets the size of the tooltip tail. `$cuetip-has-tail` must be `true`.
+    - **Description**: Sets the size of the tooltip tail. `$cuetip-has-tail`
+    must be `true`.
 - `offset`
     - **Default**: `.2em`
-    - **Description**: Sets the offset of the tooltip from its origin element.
+    - **Description**: Sets the offset of the tooltip from its element.
+
+#### Classes
+You can use classes in the form `<prefix><position>` where `<prefix>` is
+`$cuetip-class-prefix` and `<position>` is one of the four CSS position
+keywords: `top`, `right`, `bottom`, or `left`. This allows you to change the
+tooltip position on a per-instance basis.
+
+For example, using the default configuration a `class` of `tooltip--left` would
+position the tooltip to the left of the element.
 
 ## License
 
