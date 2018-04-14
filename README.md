@@ -88,10 +88,17 @@ position the tooltip to the left of the element.
   pre-built CSS or not minifying your CSS during your build process then this is
   a non-issue.
 
+### Compatibility with Webfont Icons
+If using icons that are implemented via `::before` pseudo-elements, such as Font
+Awesome, you can use cuetip on the same element as the icon by disabling the
+tooltip tail (e.g. set `$cuetip-has-tail` to `false`). An example can be found
+[here][ex-fa].
+
 ## License
 
 [MIT][license] &copy; Paul Esch-Laurent
 
+[ex-fa]: https://codepen.io/Pinjasaur/pen/vRqOqZ
 [csso]: https://github.com/css/csso
 [css-calc]: https://developer.mozilla.org/en-US/docs/Web/CSS/calc
 [ciu-calc]: https://caniuse.com/#feat=calc
