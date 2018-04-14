@@ -81,10 +81,18 @@ tooltip position on a per-instance basis.
 For example, using the default configuration a `class` of `tooltip--left` would
 position the tooltip to the left of the element.
 
+### Known Issues
+- CSS minifiers may optimize & restructure cuetip in such a way that some of the
+  functionality is broken. This is a known issue with [`csso`][csso] that can be
+  mitigated by disabling "restructuring" when optimizing. If you're using the
+  pre-built CSS or not minifying your CSS during your build process then this is
+  a non-issue.
+
 ## License
 
 [MIT][license] &copy; Paul Esch-Laurent
 
+[csso]: https://github.com/css/csso
 [css-calc]: https://developer.mozilla.org/en-US/docs/Web/CSS/calc
 [ciu-calc]: https://caniuse.com/#feat=calc
 [license]: https://pinjasaur.mit-license.org/2016
