@@ -26,6 +26,12 @@ or as an `@import` in your Sass.
 @import "path/to/cuetip";
 ```
 
+### Usage
+
+- Start with your element that needs a tooltip: `<span>Lorem ipsum</span>`
+- Add the `[data-tooltip]` attribute: `<span data-tooltip="I'm a tooltip!">Lorem ipsum</span>`
+- Add any [position classes](#classes) if necessary: `<span class="tooltip--bottom" data-tooltip="I'm a tooltip!">Lorem ipsum</span>`
+
 ### Configuration
 
 #### Variables
