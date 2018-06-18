@@ -9,7 +9,7 @@
   cursor: inherit;
 }
 
-[data-tooltip]::before {
+[data-tooltip]:not(.tooltip--no-tail)::before {
   display: none;
   pointer-events: none;
   position: absolute;
@@ -23,7 +23,7 @@
   border-color: #333 transparent transparent transparent;
 }
 
-[data-tooltip].tooltip--top::before {
+[data-tooltip].tooltip--top:not(.tooltip--no-tail)::before {
   top: auto;
   right: auto;
   bottom: auto;
@@ -35,7 +35,7 @@
   left: 50%;
 }
 
-[data-tooltip].tooltip--right::before {
+[data-tooltip].tooltip--right:not(.tooltip--no-tail)::before {
   top: auto;
   right: auto;
   bottom: auto;
@@ -47,7 +47,7 @@
   top: 50%;
 }
 
-[data-tooltip].tooltip--bottom::before {
+[data-tooltip].tooltip--bottom:not(.tooltip--no-tail)::before {
   top: auto;
   right: auto;
   bottom: auto;
@@ -59,7 +59,7 @@
   left: 50%;
 }
 
-[data-tooltip].tooltip--left::before {
+[data-tooltip].tooltip--left:not(.tooltip--no-tail)::before {
   top: auto;
   right: auto;
   bottom: auto;

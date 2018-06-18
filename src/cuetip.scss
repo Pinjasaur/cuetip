@@ -2,6 +2,7 @@
 
 $cuetip-namespace: "tooltip" !default;
 $cuetip-class-prefix: "#{$cuetip-namespace}--" !default;
+$cuetip-no-tail: "no-tail" !default;
 $cuetip-default-position: "top" !default;
 
 $cuetip-has-tail: true !default;
@@ -60,7 +61,7 @@ $__cuetip-map__: (
 
   @if ($cuetip-has-tail) {
     // Tooltip tail
-    &::before {
+    &:not(.#{$cuetip-class-prefix}#{$cuetip-no-tail})::before {
       @include __cuetip-common__;
       content: "";
       // Offset the tail from the element
@@ -72,7 +73,7 @@ $__cuetip-map__: (
 
     // Create variations for each position
     @each $position in $__cuetip-positions__ {
-      &.#{$cuetip-class-prefix}#{$position}::before {
+      &.#{$cuetip-class-prefix}#{$position}:not(.#{$cuetip-class-prefix}#{$cuetip-no-tail})::before {
         @include __cuetip-reset__;
         #{__cuetip-position__($position, 1)}: calc(100% - #{$cuetip-tail-size} + #{$cuetip-offset});
         border-color: #{__cuetip-position__($position, 4)};

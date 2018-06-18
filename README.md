@@ -63,6 +63,9 @@ For brevity, the following documentation implicity prefixes all variables with
 - `class-prefix`
     - **Default**: `cuetip--`
     - **Description**: Sets the `class` prefix.
+- `no-tail`
+    - **Default**: `no-tail`
+    - **Description**: Sets the class used to disable a tooltip tail.
 - `default-position`
     - **Default**: `top`
     - **Description**: Sets the default tooltip position (top, right, bottom,
@@ -105,6 +108,8 @@ tooltip position on a per-instance basis.
 For example, using the default configuration a `class` of `tooltip--left` would
 position the tooltip to the left of the element.
 
+Further, to disable a tooltip tail you can use a `class` of `tooltip--no-tail`.
+
 ### Known Issues
 - CSS minifiers may optimize & restructure cuetip in such a way that some of the
   functionality is broken. This is a known issue with [`csso`][csso] that can be
@@ -115,8 +120,11 @@ position the tooltip to the left of the element.
 ### Compatibility with Webfont Icons
 If using icons that are implemented via `::before` pseudo-elements, such as Font
 Awesome, you can use cuetip on the same element as the icon by disabling the
-tooltip tail (e.g. set `$cuetip-has-tail` to `false`). An example can be found
+tooltip tail (e.g. add `class` of `tooltip--no-tail`). An example can be found
 [here][ex-fa].
+
+You can also set the `$cuetip-has-tail` variable to `false` to disable tails
+on all tooltips.
 
 ## License
 
