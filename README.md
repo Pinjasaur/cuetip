@@ -4,6 +4,8 @@
 
 Simple CSS-only tooltips designed to be a dropped into your project.
 
+View the [project site][site] for a [live demo][demo].
+
 ## Getting Started
 
 ### Browser Support
@@ -14,6 +16,7 @@ cuetip relies on CSS3 [`calc()`][css-calc] which is [IE9+ (with no Opera Mini su
 
 - Bower (Deprecated): `bower install cuetip`
 - Yarn (Recommended): `yarn add cuetip`
+- CDN via unpkg: https://unpkg.com/cuetip
 - [Latest release][latest]
 
 Once in your project, you can use cuetip pre-built
@@ -28,9 +31,24 @@ or as an `@import` in your Sass.
 
 ### Usage
 
-- Start with your element that needs a tooltip: `<span>Lorem ipsum</span>`
-- Add the `[data-tooltip]` attribute: `<span data-tooltip="I'm a tooltip!">Lorem ipsum</span>`
-- Add any [position classes](#classes) if necessary: `<span class="tooltip--bottom" data-tooltip="I'm a tooltip!">Lorem ipsum</span>`
+- Start with your element that needs a tooltip:
+  ```html
+  <span>
+    Lorem ipsum
+  </span>
+  ```
+- Add the `[data-tooltip]` attribute:
+  ```html
+  <span data-tooltip="I'm a tooltip!">
+    Lorem ipsum
+  </span>
+  ```
+- Add any [position classes](#classes) if necessary:
+  ```html
+  <span class="tooltip--bottom" data-tooltip="I'm a tooltip!">
+    Lorem ipsum
+  </span>
+  ```
 
 ### Configuration
 
@@ -111,3 +129,5 @@ tooltip tail (e.g. set `$cuetip-has-tail` to `false`). An example can be found
 [license]: https://pinjasaur.mit-license.org/2016
 [latest]: https://github.com/Pinjasaur/cuetip/releases/latest
 [source]: /src/cuetip.scss
+[site]: https://pinjasaur.github.io/cuetip/
+[demo]: https://pinjasaur.github.io/cuetip/#demo
