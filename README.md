@@ -58,10 +58,10 @@ For brevity, the following documentation implicity prefixes all variables with
 [source][source].
 
 - `namespace`
-    - **Default**: `cuetip`
+    - **Default**: `tooltip`
     - **Description**: Sets the `[data-*]` attribute that holds the tooltip.
 - `class-prefix`
-    - **Default**: `cuetip--`
+    - **Default**: `tooltip--`
     - **Description**: Sets the `class` prefix.
 - `no-tail`
     - **Default**: `no-tail`
