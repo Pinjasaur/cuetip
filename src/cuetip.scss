@@ -107,7 +107,7 @@ $__cuetip-map__: (
   }
 
   @if ($cuetip-has-tail) {
-    &:hover::before {
+    &:not(.#{$cuetip-class-prefix}#{$cuetip-no-tail}):hover::before {
       @include __cuetip-common-hover__;
     }
   }

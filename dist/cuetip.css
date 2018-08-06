@@ -131,7 +131,7 @@
   top: 50%;
 }
 
-[data-tooltip]:hover::before {
+[data-tooltip]:not(.tooltip--no-tail):hover::before {
   display: inline-block;
 }
 
