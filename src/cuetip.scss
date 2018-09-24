@@ -30,6 +30,7 @@ $cuetip-offset: .2em !default;
 
 @mixin __cuetip-common-hover__ {
   display: inline-block;
+  z-index: $cuetip-z-index;
 }
 
 @mixin __cuetip-reset__ {
