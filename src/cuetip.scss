@@ -26,6 +26,7 @@ $cuetip-offset: .2em !default;
   position: absolute;
   transform: translate#{__cuetip-position__($cuetip-default-position, 3)}(unquote('(-50%)'));
   #{__cuetip-position__($cuetip-default-position, 2)}: 50%;
+  z-index: $cuetip-z-index;
 }
 
 @mixin __cuetip-common-hover__ {
