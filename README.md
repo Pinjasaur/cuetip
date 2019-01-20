@@ -4,7 +4,7 @@
 
 Simple CSS-only tooltips designed to be a dropped into your project.
 
-View the [project site][site] for a [live demo][demo].
+View the [project site][site] for a [live demo][demo] or to generate a [custom build][custom-build].
 
 ## Getting Started
 
@@ -51,6 +51,8 @@ or as an `@import` in your Sass.
   ```
 
 ### Configuration
+
+Visit the [project site][site] to generate a [custom build][custom-build].
 
 #### Variables
 For brevity, the following documentation implicity prefixes all variables with
@@ -138,4 +140,5 @@ on all tooltips.
 [latest]: https://github.com/Pinjasaur/cuetip/releases/latest
 [source]: /src/cuetip.scss
 [site]: https://pinjasaur.github.io/cuetip/
+[custom-build]: https://pinjasaur.github.io/cuetip/customize
 [demo]: https://pinjasaur.github.io/cuetip/#demo

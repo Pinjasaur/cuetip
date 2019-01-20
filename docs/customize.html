@@ -59,11 +59,30 @@
     </div>
   </header>
 
-  <section class="section" id="app">
+  <section class="section" id="customize">
     <div class="container">
       <h2 class="title is-4">customize</h2>
       <p>Configure cuetip's variables & get a no-frills custom build.</p>
     </div>
+  </section>
+
+  <section class="section" id="app">
+    <form class="container" @submit.prevent="generate">
+      <div class="field" v-for="(val, name, index) in vars" :key="index">
+        <label class="label" :for="name">
+          <code>$cuetip-{{name}}</code>
+        </label>
+        <div class="control">
+          <input class="input" type="text" :id="name" v-model="val.value" required>
+        </div>
+        <p class="help" v-html="val.desc"></p>
+      </div>
+      <div class="field">
+        <div class="control">
+          <button class="button is-link" :class="{ 'is-loading': generating }">Generate</button>
+        </div>
+      </div>
+    </form>
   </section>
 
   <footer class="footer">
@@ -79,84 +98,112 @@
     </div>
   </footer>
 
+  <!-- <script src="https://unpkg.com/vue@2"></script> -->
   <script src="https://unpkg.com/vue@2/dist/vue.min.js"></script>
   <script>
 
     const vars = {
       "namespace": {
         type: "string",
-        desc: "Sets the [data-*] attribute that holds the tooltip.",
-        default: "tooltip"
+        desc: "Sets the <code>[data-*]</code> attribute that holds the tooltip.",
+        value: "tooltip"
       },
       "class-prefix": {
         type: "string",
-        desc: "Sets the class prefix.",
-        default: "tooltip--"
+        desc: "Sets the <code>class</code> prefix.",
+        value: "tooltip--"
       },
       "no-tail": {
         type: "string",
-        desc: "Sets the class used to disable a tooltip tail.",
-        default: "no-tail"
+        desc: "Sets the <code>class</code> used to disable a tooltip tail.",
+        value: "no-tail"
       },
       "default-position": {
         type: "string", // TODO: restrict to TRBL keywords
-        desc: "Sets the default tooltip position (top, right, bottom, or left).",
-        default: "top"
+        desc: "Sets the default tooltip <code>position</code> (top, right, bottom, or left).",
+        value: "top"
       },
 
       "has-tail": {
         type: "boolean",
         desc: "Sets whether the tooltip has a tail (e.g. small triangle).",
-        default: true
+        value: true
       },
       "cursor": {
         type: "string", // TODO: restrict to cursor keywords
-        desc: "Sets the cursor value.",
-        default: "inherit"
+        desc: "Sets the <code>cursor</code> value.",
+        value: "inherit"
       },
       "z-index": {
         type: "number",
-        desc: "Sets the z-index value.",
-        default: 9999
+        desc: "Sets the <code>z-index</code> value.",
+        value: 9999
       },
 
       "color-foreground": {
         type: "string", // TODO: restrict to colors
-        desc: "Sets the foreground color (e.g. color) value.",
-        default: "#fff"
+        desc: "Sets the foreground color (e.g. <code>color</code>) value.",
+        value: "#fff"
       },
       "color-background": {
         type: "string", // TODO: restrict to colors
-        desc: "Sets the background color (e.g. background-color) value.",
-        default: "#000"
+        desc: "Sets the background color (e.g. <code>background-color</code>) value.",
+        value: "#000"
       },
       "padding": {
         type: "string", // TODO: restrict to units
-        desc: "Sets the padding.",
-        default: ".25em"
+        desc: "Sets the <code>padding</code>.",
+        value: ".25em"
       },
       "border-radius": {
         type: "string", // TODO: restrict to units
-        desc: "Sets the border-radius.",
-        default: ".1em"
+        desc: "Sets the <code>border-radius</code>.",
+        value: ".1em"
       },
 
       "tail-size": {
         type: "string", // TODO: restrict to units
-        desc: "Sets the size of the tooltip tail. $cuetip-has-tail must be true.",
-        default: ".25em"
+        desc: "Sets the size of the tooltip tail. <code>$cuetip-has-tail</code> must be true.",
+        value: ".25em"
       },
       "offset": {
         type: "string", // TODO: restrict to units
         desc: "Sets the offset of the tooltip from its element.",
-        default: ".2em"
+        value: ".2em"
       }
     }
 
+    const API = "https://wt-641ff574ca8ad76e3c5bafa96cac920c-0.sandbox.auth0-extend.com/cuetip-compile"
+
     const vm = new Vue({
-      el: "app",
+      el: "#app",
       data: {
-        vars
+        vars,
+        generating: false
+      },
+      methods: {
+        generate () {
+          const vm = this
+          this.generating = true
+          fetch(API, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              sass: "/* blah */"
+            })
+          })
+            .then(res => res.json())
+            .then(res => {
+              vm.generating = false
+              console.log(res)
+            })
+            .catch(err => {
+              vm.generating = false
+              console.log(err)
+            })
+        }
       }
     })
 
