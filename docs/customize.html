@@ -186,7 +186,10 @@
 
           const vars = {}
           for (const key in this.vars)
-            vars[`$cuetip-${key}`] = this.vars[key].value
+            vars[key] = {
+              value: this.vars[key].value,
+              type: this.vars[key].type
+            }
 
           const opts = {
             method: "POST",
