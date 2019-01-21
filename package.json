@@ -1,6 +1,6 @@
 {
   "name": "cuetip",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Simple CSS tooltips.",
   "main": "src/cuetip.scss",
   "style": "dist/cuetip.min.css",
@@ -9,7 +9,7 @@
     "type": "git",
     "url": "Pinjasaur/cuetip"
   },
-  "author": "Paul Esch-Laurent",
+  "author": "Paul Esch-Laurent <p@uly.io>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Pinjasaur/cuetip/issues"
