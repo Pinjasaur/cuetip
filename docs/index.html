@@ -1,43 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Simple CSS-only tooltips | cuetip</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/cuetip">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-    <style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="cuetip is a small, pure-CSS tooltip library designed to be dropped-into your project and configured with minimal hassle.">
+  <title>Simple CSS-only tooltips | cuetip</title>
+  <link rel="stylesheet" href="https://unpkg.com/bulma@0.7.2/css/bulma.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/cuetip">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <style>
 
-      .demo {
-        padding: 10rem 0;
-      }
+    .demo {
+      padding: 10rem 0;
+    }
 
-      p + p {
-        margin-top: 1rem;
-      }
+    p + p {
+      margin-top: 1rem;
+    }
 
+    .header-buttons {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+    }
+
+    @media (max-width: 768px) {
       .header-buttons {
-        display: flex;
-        align-items: flex-end;
-        justify-content: flex-end;
+        display: block;
+        text-align: center;
       }
+    }
 
-      @media (max-width: 768px) {
-        .header-buttons {
-          display: block;
-          text-align: center;
-        }
-      }
+    .header-buttons .button + .button {
+      margin-left: 1rem;
+    }
 
-      .header-buttons .button + .button {
-        margin-left: 1rem;
-      }
-
-    </style>
-  </head>
-  <body>
+  </style>
+</head>
+<body>
 
   <header class="section">
     <div class="container">
@@ -156,5 +157,5 @@
   ga("send", "pageview");
   </script>
 
-  </body>
+</body>
 </html>
