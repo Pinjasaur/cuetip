@@ -1,10 +1,14 @@
+<div align="center">
+  <img width="320" src="docs/img/logo.svg" alt="cuetip">
+</div>
+
 # cuetip
 
 [![Travis](https://img.shields.io/travis/Pinjasaur/cuetip.svg)](https://travis-ci.org/Pinjasaur/cuetip)
 
 Simple CSS-only tooltips designed to be a dropped into your project.
 
-View the [project site][site] for a [live demo][demo].
+View the [project site][site] for a [live demo][demo] or to generate a [custom build][custom-build].
 
 ## Getting Started
 
@@ -51,6 +55,8 @@ or as an `@import` in your Sass.
   ```
 
 ### Configuration
+
+Visit the [project site][site] to generate a [custom build][custom-build].
 
 #### Variables
 For brevity, the following documentation implicity prefixes all variables with
@@ -126,6 +132,10 @@ tooltip tail (e.g. add `class` of `tooltip--no-tail`). An example can be found
 You can also set the `$cuetip-has-tail` variable to `false` to disable tails
 on all tooltips.
 
+## Thanks
+
+Thanks to @Ghosts for creating the logo.
+
 ## License
 
 [MIT][license] &copy; Paul Esch-Laurent
@@ -138,4 +148,5 @@ on all tooltips.
 [latest]: https://github.com/Pinjasaur/cuetip/releases/latest
 [source]: /src/cuetip.scss
 [site]: https://pinjasaur.github.io/cuetip/
+[custom-build]: https://pinjasaur.github.io/cuetip/customize
 [demo]: https://pinjasaur.github.io/cuetip/#demo

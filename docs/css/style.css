@@ -1,0 +1,24 @@
+.demo {
+  padding: 10rem 0;
+}
+
+p + p {
+  margin-top: 1rem;
+}
+
+.header-buttons {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  .header-buttons {
+    display: block;
+    text-align: center;
+  }
+}
+
+.header-buttons .button + .button {
+  margin-left: 1rem;
+}
