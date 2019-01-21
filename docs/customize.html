@@ -42,6 +42,7 @@
 
   <section class="section" id="app">
     <form class="container" @submit.prevent="generate">
+      <h2 class="title is-4">variables</h2>
       <div class="field" v-for="(val, name, index) in vars" :key="index">
         <label class="label" :for="name">
           <code>$cuetip-{{name}}</code>
@@ -51,9 +52,21 @@
         </div>
         <p class="help" v-html="val.desc"></p>
       </div>
-      <div class="field">
+      <div class="field is-grouped">
         <div class="control">
           <button class="button is-link" :class="{ 'is-loading': generating }" :disabled="generating">Generate</button>
+          <button type="button" class="button is-info"
+            v-if="build !== ''"
+            :disabled="generating"
+            v-clipboard:copy="build"
+            v-clipboard:success="copySuccess"
+            v-clipboard:error="copyError"
+          >Copy</button>
+        </div>
+      </div>
+      <div class="field" v-if="build !== ''">
+        <div class="control" :class="{ 'is-loading': generating }">
+          <textarea class="textarea" v-model="build" readonly></textarea>
         </div>
       </div>
     </form>
@@ -72,8 +85,10 @@
     </div>
   </footer>
 
-  <!-- <script src="https://unpkg.com/vue@2"></script> -->
-  <script src="https://unpkg.com/vue@2/dist/vue.min.js"></script>
+  <!-- <script src="https://unpkg.com/vue@^2"></script> -->
+  <script src="https://unpkg.com/vue@^2/dist/vue.min.js"></script>
+  <script src="https://unpkg.com/vue-clipboard2@^0.2.1/dist/vue-clipboard.min.js"></script>
+  <script src="https://unpkg.com/vue-toasted@^1.1.26/dist/vue-toasted.min.js"></script>
   <script>
 
     const API = "https://wt-641ff574ca8ad76e3c5bafa96cac920c-0.sandbox.auth0-extend.com/cuetip-compile"
@@ -149,11 +164,14 @@
       }
     }
 
+    Vue.use(Toasted)
+
     const vm = new Vue({
       el: "#app",
       data: {
         vars,
-        generating: false
+        generating: false,
+        build: ""
       },
       methods: {
         generate () {
@@ -171,12 +189,27 @@
             .then(res => res.json())
             .then(res => {
               vm.generating = false
+              vm.build = res.css
               console.log(res)
             })
             .catch(err => {
               vm.generating = false
               console.log(err)
             })
+        },
+
+        copySuccess () {
+          this.$toasted.show("Copied!", {
+            duration: 2000,
+            type: "success"
+          })
+        },
+
+        copyError () {
+          this.$toasted.show("Unable to copy.", {
+            duration: 2000,
+            type: "error"
+          })
         }
       }
     })
