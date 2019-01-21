@@ -128,7 +128,7 @@
         value: true
       },
       "cursor": {
-        type: "string", // TODO: restrict to cursor keywords
+        type: "keyword", // TODO: restrict to cursor keywords
         desc: "Sets the <code>cursor</code> value.",
         value: "inherit"
       },
@@ -139,33 +139,33 @@
       },
 
       "color-foreground": {
-        type: "string", // TODO: restrict to colors
+        type: "color", // TODO: restrict to colors
         desc: "Sets the foreground color (e.g. <code>color</code>) value.",
         value: "#fff"
       },
       "color-background": {
-        type: "string", // TODO: restrict to colors
+        type: "color", // TODO: restrict to colors
         desc: "Sets the background color (e.g. <code>background-color</code>) value.",
         value: "#000"
       },
       "padding": {
-        type: "string", // TODO: restrict to units
+        type: "units", // TODO: restrict to units
         desc: "Sets the <code>padding</code>.",
         value: ".25em"
       },
       "border-radius": {
-        type: "string", // TODO: restrict to units
+        type: "units", // TODO: restrict to units
         desc: "Sets the <code>border-radius</code>.",
         value: ".1em"
       },
 
       "tail-size": {
-        type: "string", // TODO: restrict to units
+        type: "units", // TODO: restrict to units
         desc: "Sets the size of the tooltip tail. <code>$cuetip-has-tail</code> must be true.",
         value: ".25em"
       },
       "offset": {
-        type: "string", // TODO: restrict to units
+        type: "units", // TODO: restrict to units
         desc: "Sets the offset of the tooltip from its element.",
         value: ".2em"
       }
