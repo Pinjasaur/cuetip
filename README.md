@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="320" src="docs/img/logo.svg" alt="cuetip">
+  <img width="320" src="docs/img/logo.png" alt="cuetip">
 </div>
 
 # cuetip
