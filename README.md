@@ -1,3 +1,7 @@
+<div align="center">
+  <img width="320" src="docs/img/logo.svg" alt="cuetip">
+</div>
+
 # cuetip
 
 [![Travis](https://img.shields.io/travis/Pinjasaur/cuetip.svg)](https://travis-ci.org/Pinjasaur/cuetip)
@@ -127,6 +131,10 @@ tooltip tail (e.g. add `class` of `tooltip--no-tail`). An example can be found
 
 You can also set the `$cuetip-has-tail` variable to `false` to disable tails
 on all tooltips.
+
+## Thanks
+
+Thanks to @Ghosts for creating the logo.
 
 ## License
 

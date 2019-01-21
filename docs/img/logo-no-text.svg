@@ -1,0 +1,25 @@
+<svg width="342" height="294" viewBox="0 0 342 294" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="342" height="294">
+<rect width="342" height="294" fill="#C4C4C4"/>
+</mask>
+<g mask="url(#mask0)">
+<mask id="mask1" mask-type="alpha" maskUnits="userSpaceOnUse" x="1" y="0" width="340" height="294">
+<path d="M171 0L340.741 294H1.25902L171 0Z" fill="#1DE7DA"/>
+</mask>
+<g mask="url(#mask1)">
+<circle cx="206.5" cy="55.5" r="145.5" fill="#F3F741"/>
+</g>
+<mask id="mask2" mask-type="alpha" maskUnits="userSpaceOnUse" x="1" y="0" width="340" height="294">
+<path d="M171 0L340.741 294H1.25902L171 0Z" fill="#C4C4C4"/>
+</mask>
+<g mask="url(#mask2)">
+<circle cx="39.5" cy="196.5" r="145.5" fill="#D000AD"/>
+</g>
+<mask id="mask3" mask-type="alpha" maskUnits="userSpaceOnUse" x="1" y="0" width="340" height="294">
+<path d="M171 0L340.741 294H1.25902L171 0Z" fill="#C4C4C4"/>
+</mask>
+<g mask="url(#mask3)">
+<circle cx="238.5" cy="299.5" r="145.5" fill="#35DBDB"/>
+</g>
+</g>
+</svg>
