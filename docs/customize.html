@@ -69,6 +69,13 @@
           <textarea class="textarea" v-model="build" readonly></textarea>
         </div>
       </div>
+      <article class="message is-danger" v-if="error !== ''">
+        <div class="message-header">
+          <p>Generation Error</p>
+          <button type="button" class="delete" aria-label="delete" @click="error = ''"></button>
+        </div>
+        <div class="message-body" v-html="error"></div>
+      </article>
     </form>
   </section>
 
@@ -171,34 +178,42 @@
       data: {
         vars,
         generating: false,
-        build: ""
+        build: "",
+        error: ""
       },
       methods: {
         generate () {
-          const vm = this
-          this.generating = true
-          fetch(API, {
+
+          const vars = {}
+          for (const key in this.vars)
+            vars[`$cuetip-${key}`] = this.vars[key].value
+
+          const opts = {
             method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-              sass: "/* blah */"
-            })
-          })
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ vars })
+          }
+
+          this.error = ""
+          this.generating = true
+          const vm = this
+          fetch(API, opts)
             .then(res => res.json())
             .then(res => {
               vm.generating = false
-              vm.build = res.css
-              console.log(res)
+              if (res.error)
+                vm.error = res.error
+              else
+                vm.build = res.css
             })
             .catch(err => {
               vm.generating = false
-              console.log(err)
+              vm.error = err.message
             })
         },
 
         copySuccess () {
+
           this.$toasted.show("Copied!", {
             duration: 2000,
             type: "success"
@@ -206,6 +221,7 @@
         },
 
         copyError () {
+
           this.$toasted.show("Unable to copy.", {
             duration: 2000,
             type: "error"
