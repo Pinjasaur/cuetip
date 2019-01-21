@@ -134,7 +134,7 @@ on all tooltips.
 
 ## Thanks
 
-Thanks to @Ghosts for creating the logo.
+Thanks to [@Ghosts][ghosts] for creating the logo.
 
 ## License
 
@@ -150,3 +150,4 @@ Thanks to @Ghosts for creating the logo.
 [site]: https://pinjasaur.github.io/cuetip/
 [custom-build]: https://pinjasaur.github.io/cuetip/customize
 [demo]: https://pinjasaur.github.io/cuetip/#demo
+[ghosts]: https://github.com/Ghosts
