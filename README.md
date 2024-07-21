@@ -4,11 +4,11 @@
 
 # cuetip
 
-[![Travis](https://img.shields.io/travis/Pinjasaur/cuetip.svg)](https://travis-ci.org/Pinjasaur/cuetip)
+![Build Status](https://github.com/Pinjasaur/cuetip/actions/workflows/ci.yml/badge.svg)
 
 Simple CSS-only tooltips designed to be a dropped into your project.
 
-View the [project site][site] for a [live demo][demo] or to generate a [custom build][custom-build].
+View the [docs][site] for a [live demo][demo] or to generate a [custom build][custom-build].
 
 ## Getting Started
 
@@ -56,7 +56,7 @@ or as an `@import` in your Sass.
 
 ### Configuration
 
-Visit the [project site][site] to generate a [custom build][custom-build].
+Visit the [docs][site] to generate a [custom build][custom-build].
 
 #### Variables
 For brevity, the following documentation implicity prefixes all variables with
