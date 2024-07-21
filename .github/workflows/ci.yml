@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby-version: ['3.0']
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: ${{ matrix.ruby-version }}
+    - run: gem install sass
+    - run: chmod +x test/smoketest.rb
+    - name: Smoketest
+      run: test/smoketest.rb
