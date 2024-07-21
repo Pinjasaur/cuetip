@@ -1,4 +1,4 @@
-const API = "https://wt-641ff574ca8ad76e3c5bafa96cac920c-0.sandbox.auth0-extend.com/cuetip-compile"
+const API = "https://pinjasaur-cuetip.web.val.run"
 
 const vars = {
   "namespace": {
